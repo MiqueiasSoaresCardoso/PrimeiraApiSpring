@@ -49,10 +49,12 @@ public class Emprestimo {
 
     public LocalDate getDataDevolucao() { return dataDevolucao; }
     public void setDataDevolucao(LocalDate dataDevolucao) { this.dataDevolucao = dataDevolucao; }
-    public LocalDate getDataDevolucaoFinal(LocalDate localDate) { return dataDevolucaoFinal; }
+    public LocalDate getDataDevolucaoFinal() { return dataDevolucaoFinal; }
     public void SetDataDevolucaoFinal(LocalDate dataDevolucaoFinal) {
         this.dataDevolucaoFinal = dataDevolucaoFinal;
     }
     public boolean isAtivo() { return ativo; }
     public void setAtivo(boolean ativo) { this.ativo = ativo; }
+
+
 }

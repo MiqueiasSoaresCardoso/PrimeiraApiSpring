@@ -39,17 +39,18 @@ public class EmprestimoService {
 
         //Verificando se o livro está ou nãõ disponivel
         if(!livro.isDisponivel()){
-            throw new RuntimeException("Livro indisponivel para emprestimo");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Livro indisponivel para emprestimo");
         }
         Emprestimo emprestimo = new Emprestimo();
         emprestimo.setMatriculaAluno(dto.getMatriculaAluno());
         emprestimo.setLivro(livro);
         emprestimo.setDataEmprestimo(LocalDate.now());
         emprestimo.setAtivo(true);
-        emprestimo.getDataDevolucaoFinal(LocalDate.now().plusDays(30));
+        emprestimo.SetDataDevolucaoFinal(LocalDate.now().plusDays(30));
         //Marcando o livro como indisponivel
         livro.setDisponivel(false);
         //// salva empréstimo (JPA gerencia a mudança do livro se estiver no mesmo contexto)
+
         return emprestimoRepository.save(emprestimo);
 
     }
@@ -57,7 +58,7 @@ public class EmprestimoService {
     public Emprestimo devolver (Long id){
         //Verificando se o emprestimo existe
         Emprestimo emprestimo = emprestimoRepository.findById(id).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Emprestimo não encontrado")
+                () ->  new ResponseStatusException(HttpStatus.NOT_FOUND, "Emprestimo não encontrado")
         );
         //Se ele existir, verificando se está ativo
         if(!emprestimo.isAtivo()){
