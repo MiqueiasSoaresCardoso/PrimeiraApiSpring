@@ -206,5 +206,5 @@ Exemplo: `POST /emprestimos/1/devolucao`
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 Projeto desenvolvido para estudos de **Backend Web** (IFPB) usando **Java 17 + Spring Boot**.
