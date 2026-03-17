@@ -45,7 +45,7 @@ API REST simples para gerenciar **Livros** e **Empréstimos** de uma biblioteca,
 - URL: `http://localhost:8080/h2-console`
 - JDBC URL: `jdbc:h2:mem:biblioteca` *(ou conforme seu `application.properties`)*
 - User: `sa`
-- Password: *(vazio)*
+- Password: 12345678
 
 ---
 
